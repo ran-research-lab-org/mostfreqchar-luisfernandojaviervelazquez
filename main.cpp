@@ -1,36 +1,55 @@
-// Rafael A. Arce Nazario
-//
-// Cliente con pruebas para la clase Racional
+/*
+ * Programador: Luis Fernando Javier Velazquez Sosa
+ *
+ * Descripcion: Este programa analiza un string de
+ * caracteres y determina cual caracter es el mas
+ * utilizado en el string. Si el string es vacio o
+ * la cantidad de caracteres son iguales o menor
+ * devuelve '\0'.
+ */
+
+
+
 
 #define CATCH_CONFIG_MAIN
 #include <iostream>
 #include "catch.hpp"
+#include <string>
 using namespace std;
+const int ALPHA = 'z'-'a'+1;
+char cRepitition (string  c)
+{
+    int A[ALPHA]={0};
+    int count = 0;
+    char letter = 0;
+    for(int i = 0; i < size(c);i++)
+    {
+        A[c[i]-'a']++;
+        if(count < A[c[i]-'a'])
+        {
+            count = A[c[i]-'a'];
+            letter = c[i];
+        }
 
-const int lcRangeSize = 'z' - 'a' + 1;
-
-// Given a string st of lower case letters, returns the most common character in the string.
-// If there is more than one most frequent character, returns the null char `\0'
-
-char mostFreqChar(const string &st) {
-
-    // create an initialize the direct address table
-    int A[lcRangeSize] = {0};
-
-    // traverse the string, counting the frequency of the letters
-    for (auto c: st) {
-        A[c - 'a']++;
     }
-
+    for(int i = 0; i < ALPHA; i++)
+    {
+        if(count == A[c[i]-'a'] && letter != c[i])
+            return '\0';
+        else
+            return letter;
+    }
 
 }
 
-TEST_CASE("mostFreqChar", "[mostFreqChar]") {
-    REQUIRE(mostFreqChar("aaa") == 'a');
-    REQUIRE(mostFreqChar("") == '\0');
-    REQUIRE(mostFreqChar("bobolon") == 'o');
-    REQUIRE(mostFreqChar("apestosas") == 's');
-    REQUIRE(mostFreqChar("apestosa") == '\0');
-    REQUIRE(mostFreqChar("zorra") == 'r');
-    REQUIRE(mostFreqChar("uxyzabcdefghijklmnopqrstu") == 'u');
+TEST_CASE("cRepitition","[cRepitition]")
+{
+REQUIRE(cRepitition("abbbbba")== 'b');
+REQUIRE(cRepitition("aaa") == 'a');
+REQUIRE(cRepitition("") == '\0');
+REQUIRE(cRepitition("bobolon") == 'o');
+REQUIRE(cRepitition("apestosas") == 's');
+REQUIRE(cRepitition("apestosa") == '\0');
+REQUIRE(cRepitition("zorra") == 'r');
+REQUIRE(cRepitition("uxyzabcdefghijklmnopqrstu") == 'u');
 }

@@ -1,0 +1,3 @@
+C:/Users/Luis/mostfreqchar-luisfernandojaviervelazquez/cmake-build-debug/CMakeFiles/carMasFreq.dir
+C:/Users/Luis/mostfreqchar-luisfernandojaviervelazquez/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Luis/mostfreqchar-luisfernandojaviervelazquez/cmake-build-debug/CMakeFiles/rebuild_cache.dir

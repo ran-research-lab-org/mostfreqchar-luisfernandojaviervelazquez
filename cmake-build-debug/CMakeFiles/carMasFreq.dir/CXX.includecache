@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Luis/mostfreqchar-luisfernandojaviervelazquez/main.cpp
+iostream
+-
+catch.hpp
+C:/Users/Luis/mostfreqchar-luisfernandojaviervelazquez/catch.hpp
+string
+-
+
